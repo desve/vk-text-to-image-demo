@@ -23,7 +23,8 @@ base_prompts = {
         "no desktop computers on stage, professional yet relaxed atmosphere"
     ),
     "Профессиональное достижение": (
-        "software engineer in a modern open‑space office at night, "
+        "confident software engineer in a modern open‑space office at night, "
+        "clearly visible person sitting or standing at the desk, "
         "two ultra‑wide monitors with clean code editor on one screen and analytics dashboards with growing charts on the other, "
         "small notification window on screen about a successfully shipped release or passed test suite, "
         "framed award certificate or stylish tech award trophy on a nearby shelf, "
@@ -40,7 +41,8 @@ base_prompts = {
         "a few team members casually discussing tasks near a high bar table, "
         "stickers with tech symbols and conference badges on backpacks, "
         "subtle blue‑violet ambient light panels and warm ceiling lights, "
-        "friendly, slightly playful atmosphere of brainstorming, mentorship and shared ownership of projects"
+        "friendly, slightly playful atmosphere of brainstorming, mentorship and shared ownership of projects, "
+        "visible indoor plants and a couple of sports items like a yoga mat or small dumbbells in the corner, hinting at healthy lifestyle"
     ),
 }
 
