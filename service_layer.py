@@ -50,7 +50,7 @@ base_prompts = {
 # ---- стили ----
 styles = {
     "vk_flat": "flat illustration, clean lines, blue and violet colors",
-    "neon": "neon cyberpunk style, glowing edges, high contrast"
+    "neon": "neon cyberpunk style, glowing edges, high contrast",
 }
 
 def build_prompt(base: str, style_key: str) -> str:
@@ -77,12 +77,12 @@ def generate_one(
     )
     return result.images[0]
 
+# ---- перевод RU -> EN ----
 translator_ru_en = GoogleTranslator(source="auto", target="en")
+
 def translate_to_english(text: str) -> str:
     """
     Переводит пользовательский ввод на английский.
-    - Если текст пустой, возвращает пустую строку.
-    - Если язык уже английский, сервис обычно вернет тот же текст.
     """
     if text is None:
         return ""
@@ -93,24 +93,26 @@ def translate_to_english(text: str) -> str:
         translated = translator_ru_en.translate(text)
         return translated
     except Exception:
-        # В случае ошибки перевода отдаем исходный текст,
-        # чтобы не ломать пайплайн генерации.
         return text
 
+# ---- сборка промпта по сцене ----
 def build_scene_prompt(scene_name: str, user_text: str | None = None) -> str:
     user_text = (user_text or "").strip()
     user_text_en = translate_to_english(user_text) if user_text else ""
 
     if scene_name == "Свободный текст":
+        # Для свободного текста полностью доверяем пользователю.
+        # Если он ничего не ввёл, даём нейтральный базовый запрос.
         if user_text_en:
             return user_text_en
-        return "abstract illustration of career, technology and collaboration"
+        return "simple illustration, blue and violet colors"
 
     base_en = base_prompts.get(scene_name, "")
     if user_text_en:
         return f"{base_en}, {user_text_en}"
     return base_en
 
+# ---- negative prompt по умолчанию для карьерных сцен ----
 DEFAULT_NEGATIVE_PROMPT = (
     "animals, cat, dog, cartoon animal, low quality, blurry, distorted face, "
     "text, watermark, logo, signature"
@@ -148,3 +150,6 @@ def generate_image_for_app(
         negative_prompt=neg,
     )
     return img
+
+def debug_version():
+    return "service_layer 2025-11-29 free-text-no-neg"
