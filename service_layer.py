@@ -13,19 +13,25 @@ pipe.enable_attention_slicing()
 # ---- базовые промпты сцен ----
 base_prompts = {
     "Самопрезентация": (
-        "young software developer on a stage at a tech meetup, "
-        "presenting a personal project, large projection screen with UI mockups, "
-        "audience in soft focus, career growth, modern technology"
+        "young software developer on a small stage in a modern tech hub, "
+        "presenting a personal project for a social network, large projection screen with clean UI mockups, "
+        "subtle blue and violet accent lighting, audience of young people with laptops, "
+        "sleek minimalistic interior, glass panels, cable‑managed equipment, "
+        "professional yet relaxed atmosphere"
     ),
     "Профессиональное достижение": (
-        "software engineer working late in a modern open‑space office, "
-        "multiple monitors with code and analytics dashboards, city lights outside the window, "
-        "focused expression, atmosphere of motivation and achievement"
+        "software engineer in a modern open‑space office at night, "
+        "two ultra‑wide monitors with code editor and analytics dashboards, pinned sticky notes with TODOs, "
+        "city lights through panoramic windows, ergonomic chair, mechanical keyboard, noise‑canceling headphones on the desk, "
+        "soft blue and purple ambient light strips along the wall, "
+        "focused and inspired mood, minimalistic but detail‑rich workspace"
     ),
     "Команда VK": (
-        "diverse team of young developers and analysts in a modern VK office, "
-        "collaborating around laptops and whiteboard, sticky notes, warm and cozy lighting, "
-        "creative brainstorming, friendly atmosphere"
+        "diverse team of young developers and analysts in a modern social‑network office, "
+        "collaborating around laptops on a large wooden table, whiteboard with wireframes and flow diagrams, "
+        "glass meeting room, cozy corner with bean bags and floor lamp in the background, "
+        "stickers with tech symbols on laptops, subtle blue‑violet brand‑like light panels, "
+        "friendly and creative atmosphere, clean minimal design with many small office details"
     ),
 }
 
