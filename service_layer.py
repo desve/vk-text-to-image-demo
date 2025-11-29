@@ -13,17 +13,20 @@ pipe.enable_attention_slicing()
 # ---- базовые промпты сцен ----
 base_prompts = {
     "Самопрезентация": (
-        "one young AI engineer on stage with microphone, "
-        "big screen behind showing neural network diagram, tech conference"
+        "young software developer on a stage at a tech meetup, "
+        "presenting a personal project, large projection screen with UI mockups, "
+        "audience in soft focus, career growth, modern technology"
     ),
     "Профессиональное достижение": (
-        "data scientist working late at night in a modern office, "
-        "only monitor light and city lights outside window, charts and neural networks on screens"
+        "software engineer working late in a modern open‑space office, "
+        "multiple monitors with code and analytics dashboards, city lights outside the window, "
+        "focused expression, atmosphere of motivation and achievement"
     ),
     "Команда VK": (
-        "three interns in a modern IT office, sitting around a round table with laptops and sticky notes, "
-        "warm friendly atmosphere"
-    )
+        "diverse team of young developers and analysts in a modern VK office, "
+        "collaborating around laptops and whiteboard, sticky notes, warm and cozy lighting, "
+        "creative brainstorming, friendly atmosphere"
+    ),
 }
 
 # ---- стили ----
@@ -44,6 +47,7 @@ def generate_one(
     guidance: float = 7.5,
     height: int = 512,
     width: int = 512,
+    negative_prompt: str | None = None,
 ):
     result = pipe(
         prompt=prompt,
@@ -51,8 +55,15 @@ def generate_one(
         guidance_scale=guidance,
         height=height,
         width=width,
+        negative_prompt=negative_prompt,
     )
     return result.images[0]
+
+DEFAULT_NEGATIVE_PROMPT = (
+    "animals, cat, dog, cartoon animal, low quality, blurry, distorted face, "
+    "text, watermark, logo, signature"
+)
+
 
 def translate_to_english(text: str) -> str:
     if text is None:
@@ -84,14 +95,18 @@ def generate_image_for_app(
     guidance: float = 7.5,
     height: int = 512,
     width: int = 512,
+    negative_prompt: str | None = None,
 ):
     base_prompt = build_scene_prompt(scene_name, user_text)
     full_prompt = build_prompt(base_prompt, style_key)
+    neg = negative_prompt if negative_prompt is not None else DEFAULT_NEGATIVE_PROMPT
+
     img = generate_one(
         full_prompt,
         steps=steps,
         guidance=guidance,
         height=height,
         width=width,
+        negative_prompt=neg,
     )
     return img
