@@ -72,4 +72,6 @@
 ### Локально
 
 1. Клонировать репозиторий:
+'git clone https://github.com/desve/vk-text-to-image-demo.git
+cd vk-text-to-image-demo'
 
