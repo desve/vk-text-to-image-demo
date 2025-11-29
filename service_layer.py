@@ -14,17 +14,23 @@ pipe.enable_attention_slicing()
 base_prompts = {
     "Самопрезентация": (
         "young software developer on a small stage in a modern tech hub, "
-        "presenting a personal project for a social network, large projection screen with clean UI mockups, "
-        "subtle blue and violet accent lighting, audience of young people with laptops, "
-        "sleek minimalistic interior, glass panels, cable‑managed equipment, "
-        "professional yet relaxed atmosphere"
+        "presenting a personal project for a social network, "
+        "large projection screen or digital whiteboard behind them showing clear charts, line graphs and KPIs, "
+        "some charts floating slightly in 3D space like a futuristic hologram, "
+        "wireless headset microphone, slim presentation clicker with laser pointer in one hand, "
+        "tablet with notes on a small high table, "
+        "audience in soft focus, subtle blue and violet accent lighting, "
+        "no desktop computers on stage, professional yet relaxed atmosphere"
     ),
     "Профессиональное достижение": (
         "software engineer in a modern open‑space office at night, "
-        "two ultra‑wide monitors with code editor and analytics dashboards, pinned sticky notes with TODOs, "
-        "city lights through panoramic windows, ergonomic chair, mechanical keyboard, noise‑canceling headphones on the desk, "
-        "soft blue and purple ambient light strips along the wall, "
-        "focused and inspired mood, minimalistic but detail‑rich workspace"
+        "two ultra‑wide monitors with clean code editor on one screen and analytics dashboards with growing charts on the other, "
+        "small notification window on screen about a successfully shipped release or passed test suite, "
+        "framed award certificate or stylish tech award trophy on a nearby shelf, "
+        "post‑it notes with DONE tasks on the edge of the monitor, "
+        "city lights through panoramic windows, ergonomic chair, mechanical keyboard, "
+        "subtle blue and purple LED light strips along the desk, "
+        "feeling of shipped feature, solved hard problem and professional recognition"
     ),
     "Команда VK": (
         "diverse team of young developers and analysts in a modern social‑network office, "
