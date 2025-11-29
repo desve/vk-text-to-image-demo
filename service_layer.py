@@ -34,10 +34,13 @@ base_prompts = {
     ),
     "Команда VK": (
         "diverse team of young developers and analysts in a modern social‑network office, "
-        "collaborating around laptops on a large wooden table, whiteboard with wireframes and flow diagrams, "
-        "glass meeting room, cozy corner with bean bags and floor lamp in the background, "
-        "stickers with tech symbols on laptops, subtle blue‑violet brand‑like light panels, "
-        "friendly and creative atmosphere, clean minimal design with many small office details"
+        "collaborating around laptops on a large wooden table, whiteboard with wireframes, flow diagrams and product ideas, "
+        "nearby coffee point with cups and snacks, cozy lounge corner with bean bags and a small library shelf in the background, "
+        "glass meeting room and open coworking space instead of strict cubicles, "
+        "a few team members casually discussing tasks near a high bar table, "
+        "stickers with tech symbols and conference badges on backpacks, "
+        "subtle blue‑violet ambient light panels and warm ceiling lights, "
+        "friendly, slightly playful atmosphere of brainstorming, mentorship and shared ownership of projects"
     ),
 }
 
