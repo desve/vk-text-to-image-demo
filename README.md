@@ -37,17 +37,18 @@
 
 Профессиональное достижение:
 
-![Профессиональное достижение, vk_flat](examples/Professionalnoe_dostizhenie_vk_flat.jpg)  
-![Профессиональное достижение, neon](examples/Professionalnoe_dostizhenie_neon.jpg)
+![Профессиональное достижение, vk_flat](examples/Профессиональное_достижение_vk_flat.jpg)  
+![Профессиональное достижение, neon](examples/Профессиональное_достижение_neon.jpg)
 
 Команда VK:
 
-![Команда VK, vk_flat](examples/Komanda_VK_vk_flat.jpg)  
-![Команда VK, neon](examples/Komanda_VK_neon.jpg)
+![Команда VK, vk_flat](examples/Команда_VK_vk_flat.jpg)  
+![Команда VK, neon](examples/Команда_VK_neon.jpg)
 
 Свободный текст (пример пользовательского запроса `кот смотрит телевизор` в стиле `neon`):
 
-![Свободный текст, neon](examples/free_text_neon.jpg)
+![Свободный текст, neon](examples/Кот_смотрит_телевизор_VK_flat.jpg)
+![Свободный текст, neon](examples/Кот_смотрит_телевизор_neon.jpg)
 
 ## Архитектура
 
