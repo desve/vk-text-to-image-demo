@@ -77,14 +77,7 @@ def generate_one(
     )
     return result.images[0]
 
-DEFAULT_NEGATIVE_PROMPT = (
-    "animals, cat, dog, cartoon animal, low quality, blurry, distorted face, "
-    "text, watermark, logo, signature"
-)
-
-
 translator_ru_en = GoogleTranslator(source="auto", target="en")
-
 def translate_to_english(text: str) -> str:
     """
     Переводит пользовательский ввод на английский.
@@ -118,6 +111,11 @@ def build_scene_prompt(scene_name: str, user_text: str | None = None) -> str:
         return f"{base_en}, {user_text_en}"
     return base_en
 
+DEFAULT_NEGATIVE_PROMPT = (
+    "animals, cat, dog, cartoon animal, low quality, blurry, distorted face, "
+    "text, watermark, logo, signature"
+)
+
 def generate_image_for_app(
     scene_name: str,
     style_key: str,
@@ -130,7 +128,16 @@ def generate_image_for_app(
 ):
     base_prompt = build_scene_prompt(scene_name, user_text)
     full_prompt = build_prompt(base_prompt, style_key)
-    neg = negative_prompt if negative_prompt is not None else DEFAULT_NEGATIVE_PROMPT
+
+    if negative_prompt is not None:
+        neg = negative_prompt
+    else:
+        # Для преднастроенных сцен используем ограничения,
+        # для Свободного текста — без ограничений
+        if scene_name == "Свободный текст":
+            neg = None
+        else:
+            neg = DEFAULT_NEGATIVE_PROMPT
 
     img = generate_one(
         full_prompt,
