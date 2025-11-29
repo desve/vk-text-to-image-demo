@@ -32,8 +32,8 @@
 
 Самопрезентация:
 
-![Самопрезентация, vk_flat](examples/Samoprezentatsiia_vk_flat.jpg)  
-![Самопрезентация, neon](examples/Samoprezentatsiia_neon.jpg)
+![Самопрезентация, vk_flat](examples/Самопрезентация_vk_flat.jpg)  
+![Самопрезентация, neon](examples/Самопрезентация_neon.jpg)
 
 Профессиональное достижение:
 
