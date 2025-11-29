@@ -1,5 +1,6 @@
 import torch
 from diffusers import StableDiffusionXLPipeline
+from deep_translator import GoogleTranslator
 
 # ---- инициализация пайплайна ----
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -82,13 +83,26 @@ DEFAULT_NEGATIVE_PROMPT = (
 )
 
 
+translator_ru_en = GoogleTranslator(source="auto", target="en")
+
 def translate_to_english(text: str) -> str:
+    """
+    Переводит пользовательский ввод на английский.
+    - Если текст пустой, возвращает пустую строку.
+    - Если язык уже английский, сервис обычно вернет тот же текст.
+    """
     if text is None:
         return ""
     text = text.strip()
     if not text:
         return ""
-    return text
+    try:
+        translated = translator_ru_en.translate(text)
+        return translated
+    except Exception:
+        # В случае ошибки перевода отдаем исходный текст,
+        # чтобы не ломать пайплайн генерации.
+        return text
 
 def build_scene_prompt(scene_name: str, user_text: str | None = None) -> str:
     user_text = (user_text or "").strip()
