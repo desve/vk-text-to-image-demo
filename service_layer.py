@@ -49,8 +49,16 @@ base_prompts = {
 
 # ---- стили ----
 styles = {
-    "vk_flat": "flat illustration, clean lines, blue and violet colors",
-    "neon": "neon cyberpunk style, glowing edges, high contrast",
+    "vk_flat": (
+        "flat illustration, clean vector lines, smooth shapes, "
+        "soft vk‑like blue and light violet color palette, "
+        "minimalist, modern UI style, gentle gradients, no harsh contrast"
+    ),
+    "neon": (
+        "neon illustration, dark background, strong blue and purple neon lights, "
+        "glowing edges around people and objects, reflections on glass, "
+        "high but not extreme contrast, cinematic lighting, slight cyberpunk mood"
+    ),
 }
 
 def build_prompt(base: str, style_key: str) -> str:
